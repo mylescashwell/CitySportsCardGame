@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y7O-VN-6xe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Team Card CollectionVC-->
+        <scene sceneID="J73-NK-6EB">
+            <objects>
+                <collectionViewController id="C8W-Ah-9uK" customClass="TeamCardCollectionVC" customModule="CitySportsCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ve5-jC-7D4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uaL-7m-rjC">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teamCell" id="6wi-w6-eFs" customClass="TeamCollectionViewCell" customModule="CitySportsCardGame" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oJC-OE-lTo">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z4A-kq-aSz">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Z4A-kq-aSz" secondAttribute="height" multiplier="1:1" id="3vr-vd-Jsi"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Z4A-kq-aSz" firstAttribute="centerX" secondItem="oJC-OE-lTo" secondAttribute="centerX" id="2df-MW-O6V"/>
+                                        <constraint firstItem="Z4A-kq-aSz" firstAttribute="top" secondItem="oJC-OE-lTo" secondAttribute="top" id="4qu-zX-gKc"/>
+                                        <constraint firstAttribute="bottom" secondItem="Z4A-kq-aSz" secondAttribute="bottom" id="SG9-Gd-20d"/>
+                                        <constraint firstItem="Z4A-kq-aSz" firstAttribute="centerY" secondItem="oJC-OE-lTo" secondAttribute="centerY" id="sGj-QC-RVK"/>
+                                        <constraint firstItem="Z4A-kq-aSz" firstAttribute="leading" secondItem="oJC-OE-lTo" secondAttribute="leading" id="y2b-oG-cey"/>
+                                        <constraint firstAttribute="trailing" secondItem="Z4A-kq-aSz" secondAttribute="trailing" id="yNt-XY-LeV"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="teamImageView" destination="Z4A-kq-aSz" id="J4K-3s-liE"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="C8W-Ah-9uK" id="GGb-4S-uk1"/>
+                            <outlet property="delegate" destination="C8W-Ah-9uK" id="FIC-YZ-xIm"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="JYB-h7-a7x">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="433-hY-az8">
+                            <connections>
+                                <segue destination="VCr-eN-eKc" kind="presentation" identifier="toCitySwitchingVC" id="7S5-05-EtW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hg3-kL-Dv9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-301.44927536231887" y="95.758928571428569"/>
+        </scene>
+        <!--City SwitchingVC-->
+        <scene sceneID="fsw-Jk-MMV">
+            <objects>
+                <viewController id="VCr-eN-eKc" customClass="CitySwitchingVC" customModule="CitySportsCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rjG-Pu-S7q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="xxq-dz-obc">
+                                <rect key="frame" x="57" y="135" width="300" height="538"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EIb-GC-zVa">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="244"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Philadelphia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOX-d8-V7F">
+                                                <rect key="frame" x="70.5" y="0.0" width="159" height="36"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7V-yx-7Eh">
+                                                <rect key="frame" x="0.0" y="44" width="300" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="u7V-yx-7Eh" secondAttribute="height" multiplier="3:2" id="C82-qQ-InJ"/>
+                                                    <constraint firstAttribute="height" constant="200" id="vTb-C5-nxI"/>
+                                                </constraints>
+                                                <state key="normal" image="loveStatue"/>
+                                                <connections>
+                                                    <action selector="phillyButtonTapped:" destination="VCr-eN-eKc" eventType="touchUpInside" id="Jer-QW-uF0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vuh-n7-ssV">
+                                        <rect key="frame" x="0.0" y="294" width="300" height="244"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eep-1m-19Z">
+                                                <rect key="frame" x="88.5" y="0.0" width="123.5" height="36"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hre-9X-H6Q">
+                                                <rect key="frame" x="0.0" y="44" width="300" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="hre-9X-H6Q" secondAttribute="height" multiplier="3:2" id="7l9-yL-bLE"/>
+                                                    <constraint firstAttribute="height" constant="200" id="isv-Sm-pSd"/>
+                                                </constraints>
+                                                <state key="normal" image="statueOfLiberty"/>
+                                                <connections>
+                                                    <action selector="nyButtonTapped:" destination="VCr-eN-eKc" eventType="touchUpInside" id="yzE-Hi-FSw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9O-BO-Tet">
+                                <rect key="frame" x="20" y="50" width="201" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WmJ-jO-UDb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y9O-BO-Tet" firstAttribute="leading" secondItem="WmJ-jO-UDb" secondAttribute="leading" constant="20" id="3vW-c8-aR4"/>
+                            <constraint firstItem="xxq-dz-obc" firstAttribute="top" secondItem="Y9O-BO-Tet" secondAttribute="bottom" constant="37" id="FHW-6N-RJC"/>
+                            <constraint firstItem="xxq-dz-obc" firstAttribute="centerY" secondItem="WmJ-jO-UDb" secondAttribute="centerY" id="fPp-5Z-tq2"/>
+                            <constraint firstItem="WmJ-jO-UDb" firstAttribute="trailing" secondItem="Y9O-BO-Tet" secondAttribute="trailing" constant="193" id="nOu-ki-hu2"/>
+                            <constraint firstItem="xxq-dz-obc" firstAttribute="centerX" secondItem="WmJ-jO-UDb" secondAttribute="centerX" id="oCi-0H-k5O"/>
+                            <constraint firstItem="Y9O-BO-Tet" firstAttribute="top" secondItem="WmJ-jO-UDb" secondAttribute="top" constant="50" id="qo4-oL-1N7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mxp-Tc-MbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495.6521739130435" y="95.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AUG-J3-1Qu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y7O-VN-6xe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8lc-f2-8jS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="C8W-Ah-9uK" kind="relationship" relationship="rootViewController" id="4SZ-Yn-1ud"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSH-CS-HAp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1068.1159420289855" y="95.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <image name="loveStatue" width="2200" height="1237"/>
+        <image name="statueOfLiberty" width="1600" height="1065"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
